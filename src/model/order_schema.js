@@ -3,10 +3,7 @@ const mongoose = require("mongoose")
 // userAddress, receivingAddress, pay, receivedToken
 const orderSchema = mongoose.Schema(
   {
-    orderNumber: {
-      type: String,
-      trim: true
-    },
+    orderNumber: String,
     quantity: Number,
     totalAmount: Number,
     orderStatus: String,
