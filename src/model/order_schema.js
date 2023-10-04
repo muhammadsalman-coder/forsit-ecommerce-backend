@@ -22,4 +22,4 @@ const orderSchema = mongoose.Schema(
 orderSchema.virtual("id").get(function () {
   return this._id.toString()
 })
-module.exports = mongoose.model("Products", orderSchema)
+module.exports = mongoose.model("Orders", orderSchema)

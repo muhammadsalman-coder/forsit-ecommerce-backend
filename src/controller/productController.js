@@ -4,8 +4,8 @@ const fs = require("fs")
 exports.addProduct = async (req, res) => {
   console.log("req?.body", req?.body)
   if (!req?.body) return res.send("bodynoet exist")
-  const { name, quantity, price } = req?.body
-  if (name && quantity && price) {
+  const { name, price } = req?.body
+  if (name && price) {
     const uploader = async (path) => await cloudinary.upload(path, "Images")
     if (req.file) {
       let { path } = req.file
@@ -14,7 +14,6 @@ exports.addProduct = async (req, res) => {
       if (newPath?.url) {
         const _product = new Products({
           name: name,
-          quantity: +quantity,
           image: newPath.url,
           price: +price
         })
